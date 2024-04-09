@@ -29,3 +29,9 @@
 .small {
   font-size: 0.75rem;
 }
+
+.obsahformu {
+  display: flex;
+  justify-content: center; 
+}
+

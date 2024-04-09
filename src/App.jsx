@@ -1,27 +1,28 @@
+import React, { useState } from 'react';
 import './App.css';
+import Navbar from './Navbar';
+import NoteForm from './NoteForm';
+import Note from './Note';
+import './Note.css';
+
 
 function App() {
+  const [notes, setNotes] = useState([]);
+
+  const addNote = (note) => {
+    setNotes([...notes, note]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+      <Navbar />
+      <NoteForm addNote={addNote} />
+      <hr />
+      <div>
+        {notes.map((note, index) => (
+          <Note key={index} title={note.title} content={note.content} />
+        ))}
+      </div>
     </div>
   );
 }

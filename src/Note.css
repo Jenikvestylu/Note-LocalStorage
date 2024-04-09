@@ -1,0 +1,12 @@
+.Note {
+  margin-bottom: 20px;
+}
+
+.NoteContent {
+  border: 1px solid #ccc; 
+  padding: 10px; 
+  width: 300px; 
+  float: left;
+  margin-right: 20px; 
+  word-wrap: break-word; 
+}
